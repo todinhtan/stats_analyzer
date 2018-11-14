@@ -3,8 +3,6 @@ import httpStatus from 'http-status-codes';
 import logger from '../utils/logger';
 import config from '../config';
 import dateUtils from '../utils/date';
-import { start } from 'repl';
-import date from '../utils/date';
 
 // filter and update
 export async function mockup(req, res) {
