@@ -173,7 +173,7 @@ export async function getSingle(req, res) {
 
     res.setHeader('Content-Disposition', `attachment; filename=dau_${vendorId}.csv`);
     res.type('text/csv');
-    res.send(csv).end();
+    return res.send(csv).end();
   } catch (error) {
     logger.error(error);
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).end();
