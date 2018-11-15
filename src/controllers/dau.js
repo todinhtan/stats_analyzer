@@ -90,13 +90,13 @@ export async function get(req, res) {
       {
         $project: {
           _id: 0,
-          vendorName: '$_id.vendorName',
-          vendorId: '$_id.vendorId',
+          vendor_name: '$_id.vendorName',
+          vendor_id: '$_id.vendorId',
           count: 1,
           date: '$_id.time',
         },
       },
-      { $sort: { date: 1 } },
+      { $sort: { date: -1 } },
     ]).toArray().catch((err) => { logger.error(err); });
 
     // close connection
