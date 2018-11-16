@@ -49,7 +49,7 @@ async function getStatsWeekly(vendorId, collection) {
     {
       $project: {
         week: { $isoWeek: '$time' },
-        year: { $year: '$time' },
+        year: { $isoWeekYear: '$time' },
         itemId: 1,
         category: 1,
       },
